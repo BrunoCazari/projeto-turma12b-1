@@ -13,11 +13,12 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Table(name = "mtb310_ag_financeiro")
-@Getter @Setter
+@Getter @Setter @NoArgsConstructor
 public class AgenteFinanceiro {
 
     @Id // Indica chave primaria
@@ -30,6 +31,11 @@ public class AgenteFinanceiro {
 
     @Column(name = "volume_transacional")
     private double volumeTransacional;
+
+    public AgenteFinanceiro(String nomeAgente, double volumeTransacional) {
+        this.nomeAgente = nomeAgente;
+        this.volumeTransacional = volumeTransacional;
+    }
 
 /*     @OneToMany(mappedBy = "agente")
     @JsonIgnoreProperties("agente")

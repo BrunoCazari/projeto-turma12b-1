@@ -37,8 +37,8 @@ public class Transacao {
     @Column(name = "status")
     private int status;
 
-    @ManyToOne
+/*     @ManyToOne
     @JoinColumn(name = "id_agente")
     @JsonIgnoreProperties("transacoes")
-    private AgenteFinanceiro agente;
+    private AgenteFinanceiro agente; */
 }

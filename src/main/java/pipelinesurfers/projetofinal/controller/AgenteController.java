@@ -20,9 +20,11 @@ public class AgenteController {
     private AgenteDAO dao;
 
     @GetMapping("/all")
-    public List<AgenteFinanceiro> listarAgentes() {
-        List<AgenteFinanceiro> lista = (List<AgenteFinanceiro>) dao.findAll();
+    public List<AgenteFinanceiro> listarTodos() {
+        List<AgenteFinanceiro> lista = (List<AgenteFinanceiro>) dao.findTop10ByOrderByVolumeTransacionalDesc();
         return lista;
     } 
+
+    
     
 }
