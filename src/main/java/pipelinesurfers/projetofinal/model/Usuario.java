@@ -35,6 +35,9 @@ public class Usuario {
     @Column(name = "senha", length = 30, nullable = false)
     private String senha;
 
+    @Column(name = "linkfoto", length = 200)
+    private String linkfoto;
+
  
         public Usuario(String name, String email) {
         this.name = name;
