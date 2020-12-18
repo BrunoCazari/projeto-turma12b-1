@@ -1,7 +1,5 @@
 package pipelinesurfers.projetofinal.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -10,9 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import pipelinesurfers.projetofinal.dao.AgenteDAO;
 import pipelinesurfers.projetofinal.dao.TransacaoDAO;
-import pipelinesurfers.projetofinal.model.Transacao;
 
 @RestController
 @CrossOrigin("*")
@@ -31,7 +27,16 @@ public class TransacaoController {
 
         }
         return ResponseEntity.notFound().build();
-
-
     }
+
+    @GetMapping("/idtotal/{id}")
+    public ResponseEntity<Object> buscarAgFinanceiroPersonalizado(@PathVariable int id) {
+        Object agFinanceiroFinded = dao.buscarAgFinanceirosPorId(id);
+
+        if(agFinanceiroFinded != null){
+            return ResponseEntity.ok(agFinanceiroFinded);
+        }
+        return ResponseEntity.notFound().build();
+    }
+    
 }

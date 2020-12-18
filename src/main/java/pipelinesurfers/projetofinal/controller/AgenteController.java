@@ -16,7 +16,7 @@ import pipelinesurfers.projetofinal.model.AgenteFinanceiro;
 @RequestMapping("/agentes")
 public class AgenteController {
 
-    @Autowired // Injecao de dependencia
+    @Autowired 
     private AgenteDAO dao;
 
     @GetMapping("/all")
@@ -24,7 +24,5 @@ public class AgenteController {
         List<AgenteFinanceiro> lista = (List<AgenteFinanceiro>) dao.findTop10ByOrderByVolumeTransacionalDesc();
         return lista;
     } 
-
-    
     
 }
