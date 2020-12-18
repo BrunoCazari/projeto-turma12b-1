@@ -37,8 +37,8 @@ public class AgenteFinanceiro {
         this.volumeTransacional = volumeTransacional;
     }
 
-/*     @OneToMany(mappedBy = "agente")
+    @OneToMany (mappedBy = "agente")
     @JsonIgnoreProperties("agente")
-    private List<AgenteFinanceiro> transacoes; */
+    private List<Transacao> transacoes;
 
 }

@@ -1,6 +1,7 @@
 package pipelinesurfers.projetofinal.model;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -11,10 +12,12 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@Entity
 @Table(name = "mtb310_transaction")
-@Getter @Setter
+@Getter @Setter @NoArgsConstructor
 public class Transacao {
 
     @Id // Indica chave primaria
@@ -37,8 +40,10 @@ public class Transacao {
     @Column(name = "status")
     private int status;
 
-/*     @ManyToOne
-    @JoinColumn(name = "id_agente")
+    
+
+     @ManyToOne
+    @JoinColumn(name = "ag_financeiro")
     @JsonIgnoreProperties("transacoes")
-    private AgenteFinanceiro agente; */
+    private AgenteFinanceiro agente; 
 }
